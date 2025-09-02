@@ -1,16 +1,17 @@
-# eco_smartroom
+# Fazendo pull do repositório
+- Crie uma pasta vazia
+- `git pull [link do repositório]`
+- Mude de branch usando `git checkout [nome da branch]` ou `git switch [nome da branch]` <-- muito importante!
 
-A new Flutter project.
+# Rodando o projeto
+- Instale as dependencias usando `flutter pub get`
+- Rode o projeto usando `flutter run`
 
-## Getting Started
+# Onde fica localizado o arquivo principal?
+- O arquivo principal do projeto está localizado em `lib/main.dart`
 
-This project is a starting point for a Flutter application.
+# Meu terminal está dando erro na hora de rodar o projeto, o que eu faço?
+- Tente primeiro iniciar um novo emulador android/ios ou conectar um dispositivo físico
+- Se não funcionar tente rodar o comando `flutter clean` e depois `flutter pub get` e rode o projeto novamente
+- Se ainda assim não funcionar, tente rodar o comando `flutter doctor` e veja se está tudo certo com a instalação do flutter
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
