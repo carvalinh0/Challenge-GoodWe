@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'src/features/login/ui/login_screen.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
 }
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Eco_Smartroom',
+      title: 'Eco SmartRoom',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
