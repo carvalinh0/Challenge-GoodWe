@@ -10,62 +10,62 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
-  String? _selectedArea;
-  bool _acceptedTerms = false;
-  final _formKey = GlobalKey<FormState>();
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
+    String? _selectedArea;
+    bool _acceptedTerms = false;
+    final _formKey = GlobalKey<FormState>();
+    final _emailController = TextEditingController();
+    final _passwordController = TextEditingController();
 
   bool _isLoading = false;
 
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
+    @override
+    void dispose() {
+        _emailController.dispose();
+        _passwordController.dispose();
+        super.dispose();
   }
 
   void _tryRegister() {
-    if (_formKey.currentState?.validate() ?? false) {
-      setState(() => _isLoading = true);
+      if (_formKey.currentState?.validate() ?? false) {
+          setState(() => _isLoading = true);
 
-      // Simular login (exemplo)
-      Future.delayed(const Duration(seconds: 2), () {
-        setState(() => _isLoading = false);
-        // Aqui você pode navegar para a próxima tela ou mostrar mensagem
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Login realizado com sucesso!')),
-        );
-      });
-    }
+            // Simular login (exemplo)
+              Future.delayed(const Duration(seconds: 2), () {
+                  setState(() => _isLoading = false);
+                  // Aqui você pode navegar para a próxima tela ou mostrar mensagem
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Login realizado com sucesso!')),
+                );
+          });
+      }
   }
 
   String? _validateEmail(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Por favor, insira o e-mail';
-    }
-    final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
-    if (!emailRegex.hasMatch(value)) {
-      return 'E-mail inválido';
-    }
-    return null;
+      if (value == null || value.isEmpty) {
+          return 'Por favor, insira o e-mail';
+      }
+      final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
+      if (!emailRegex.hasMatch(value)) {
+          return 'E-mail inválido';
+      }
+      return null;
   }
 
   String? _validatePassword(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Por favor, insira a senha';
-    }
-    if (value.length < 6) {
-      return 'A senha deve ter ao menos 6 caracteres';
-    }
-    return null;
+      if (value == null || value.isEmpty) {
+          return 'Por favor, insira a senha';
+      }
+      if (value.length < 8) {
+          return 'A senha deve ter ao menos 8 caracteres';
+      }
+      return null;
   }
 
   String? _confirmPassword(String? value) {
-    if (value != _passwordController.text) {
-      return 'As senhas não coincidem';
-    }
-    return null;
+      if (value != _passwordController.text) {
+          return 'As senhas não coincidem';
+      }
+      return null;
   }
 
   Widget build(BuildContext context) {
