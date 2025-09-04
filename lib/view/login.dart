@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'login/forgotten_password_screen.dart';
 import 'login/register_screen.dart';
+import 'mainscreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -28,12 +30,17 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() => _isLoading = true);
 
       // Simular login (exemplo)
-      Future.delayed(const Duration(seconds: 2), () {
-        setState(() => _isLoading = false);
+      Future.delayed(const Duration(seconds: 1), () {
 
-        // Aqui você pode navegar para a próxima tela ou mostrar mensagem
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Login realizado com sucesso!')),
+        // Desativa o loading e navega para a HomeScreen em caso de sucesso
+        setState(() {
+          _isLoading = false;
+        });
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const MainScreen(),
+          ),
         );
       });
     }
@@ -63,6 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Center(
@@ -73,14 +81,8 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(bottom: 20),
-                  child: Image.asset('assets/icon.png', height: 200),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 5),
-                  child: Image.asset('assets/title.png', height: 100),
-                ),
+                  Image.asset('assets/icon.png', height: 200),
+                  Image.asset('assets/title.png', height: 100),
                 TextFormField(
                   controller: _emailController,
                   decoration: const InputDecoration(
@@ -106,7 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   textInputAction: TextInputAction.done,
                   onFieldSubmitted: (_) => _tryLogin(),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 12),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -130,10 +132,23 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => RegisterScreen(),
+                              builder: (context) => ForgottenPasswordScreen(),
                             ),
                           );
                         },
+                  child: const Text("Esqueceu a senha?"),
+                ),
+                TextButton(
+                  onPressed: _isLoading
+                      ? null
+                      : () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RegisterScreen(),
+                      ),
+                    );
+                  },
                   child: const Text("Não tem uma conta? Registre-se"),
                 ),
               ],
