@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'src/features/login/ui/login_screen.dart';
 
-void main() async {
+import 'view/home.dart';
+import 'view/login.dart';
+
+void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  final islogged = true;
+
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -15,9 +19,9 @@ class MyApp extends StatelessWidget {
       title: 'Eco SmartRoom',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
       ),
-      home: LoginScreen(),
+      home: islogged ? HomeScreen() : LoginScreen(),
     );
   }
 }
