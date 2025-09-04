@@ -1,14 +1,15 @@
+import 'package:Eco_SmartRoom/view/login.dart';
 import 'package:flutter/material.dart';
 
-import 'view/home.dart';
-import 'view/login.dart';
+import 'view/mainscreen.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final islogged = true;
+  final islogged = false;
+  final forgottenPassword = false;
 
   const MyApp({super.key});
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
       ),
-      home: islogged ? HomeScreen() : LoginScreen(),
+      home: islogged ? MainScreen() : LoginScreen()
     );
   }
 }
