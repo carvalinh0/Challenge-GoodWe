@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:Eco_SmartRoom/viewModel/warnings_viewmodel.dart';
+import 'package:Eco_SmartRoom/viewModel/notification_viewmodel.dart';
 
 class WarningsScreen extends StatelessWidget {
   const WarningsScreen({super.key});
@@ -10,17 +10,6 @@ class WarningsScreen extends StatelessWidget {
     final vm = Provider.of<NotificationViewModel>(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Notificações"),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () {
-              vm.addNotification("Novo Alerta", "Mensagem de teste!");
-            },
-          ),
-        ],
-      ),
       body: ListView.builder(
         itemCount: vm.notifications.length,
         itemBuilder: (context, index) {
@@ -35,9 +24,12 @@ class WarningsScreen extends StatelessWidget {
             title: Text(notification.title),
             subtitle: Text(notification.body),
             trailing: Text(
-              "${notification.timestamp.toLocal().hour}:${notification.timestamp.toLocal().minute.toString().padLeft(2, '0')}",
+              "${notification.timestamp.day}/${notification.timestamp.month}",
+              style: const TextStyle(fontSize: 12),
             ),
-            onTap: () => vm.markAsRead(notification.id),
+            onTap: () {
+              vm.markAsRead(notification.id);
+            },
           );
         },
       ),

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "806199046358",
+    "project_id": "challenge-goodwe",
+    "storage_bucket": "challenge-goodwe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806199046358:android:0d5e6ebe40d199f0031977",
+        "android_client_info": {
+          "package_name": "com.example.eco_smartroom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyVKpBMKXKjD3R5CVl_PCH57K_1JOTsPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
