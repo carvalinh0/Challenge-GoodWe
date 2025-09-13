@@ -4,7 +4,7 @@ import 'home/home.dart';
 import 'home/plants.dart';
 import 'home/profile.dart';
 import 'home/settings.dart';
-import 'home/warnings.dart';
+import 'home/notifications_firebase.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

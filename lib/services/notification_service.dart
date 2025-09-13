@@ -9,6 +9,7 @@ class NotificationService {
   void Function(String title, String body)? onNotificationReceived;
 
   Future<void> init() async {
+    FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
     // Local notifications
     const AndroidInitializationSettings androidInit =
         AndroidInitializationSettings('@mipmap/ic_launcher');
@@ -36,6 +37,10 @@ class NotificationService {
         }
       }
     });
+  }
+
+  Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+    // Handle background messages if needed
   }
 
   Future<void> showLocalNotification(String title, String body) async {
