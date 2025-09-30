@@ -64,15 +64,6 @@ Este projeto é uma aplicação multiplataforma desenvolvida com **Flutter** par
   ```
   flutter run
   ```
-- **Web**:
-  ```
-  flutter run -d chrome
-  ```
-- **Funções Firebase**:
-  ```
-  cd firebase/functions
-  firebase emulators:start
-  ```
 
 ---
 
