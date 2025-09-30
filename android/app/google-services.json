@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "365813843613",
+    "project_id": "energy-58v461",
+    "storage_bucket": "energy-58v461.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365813843613:android:d8b95ec4cb2aa8a3a33674",
+        "android_client_info": {
+          "package_name": "com.mycompany.ecosmartroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365813843613-h9pbe5g9lo38nq4vphn5vhdrn6vthorv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.ecosmartroom",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "365813843613-ichs5uk9o68jh4ovhvh1f7mghtdnitd0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxLmJlyIxp09-krqwm_OTMo0zEjXCgctE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365813843613-ichs5uk9o68jh4ovhvh1f7mghtdnitd0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "365813843613-bsrtujiukj2dlibpoflutuue4np31ad9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.ecosmartroom"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
